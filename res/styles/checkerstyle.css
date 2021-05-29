@@ -64,7 +64,53 @@ main {
     overflow: hidden;
 }
 
+/* Style-selection dropdown menu */
 
+#optional-break {
+    display: none;
+}
+
+.stylebtn {
+    background-color:hsla(241, 68%, 32%, 1);
+    color: white;
+    border: none;
+    padding: 2px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 160px;
+}
+
+.stylebtn:hover, .stylebtn:focus {
+    background-color: hsla(241, 100%, 83%, 1);
+}
+
+.style-select {
+    position: relative;
+    float: right;
+    margin: 5px;
+}
+
+.styles-content {
+    display: none;
+    position: absolute;
+    background-color: hsla(241, 68%, 100%, 1);
+    right: 0;
+    z-index: 1;
+}
+
+.styles-content p {
+    background-color: hsla(241, 68%, 100%, 1);
+    color: black;
+    display: block;
+}
+
+.styles-content p:hover {
+    background-color: hsla(241, 100%, 83%, 1);
+}
+
+.styles-show {
+    display: block;
+}
 
 /* Set up main grid */
 
@@ -393,6 +439,13 @@ footer {
         grid-template: 140px / 2fr 1fr 2fr;
     }
 
+    .stylebtn {
+        font-size: 0.8rem;
+    }
+
+    #optional-break {
+        display: block;
+    }
 
     h1 {
         font-size: 1.5rem;
@@ -469,6 +522,19 @@ footer {
 @media only screen and (max-width: 560px) {
     header, footer {
         width: 280px;
+    }
+
+    .stylebtn {
+        font-size: 0.8rem;
+    }
+
+    #optional-break {
+        display: block;
+    }
+
+    .style-select {
+        position: relative;
+        margin: 5px;
         
     }
 
@@ -492,10 +558,8 @@ footer {
     }
 
     h1 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
-
-    
 
     header a {
         font-size: 0.7rem;
@@ -503,10 +567,8 @@ footer {
 
     header nav {
         width: 280px;
-        padding: 5px;    
+        padding: 0 5px;    
     }
-
-    
 
     .main-grid-container {
         grid-template: repeat(4, 280px) / repeat(1, 280px);
